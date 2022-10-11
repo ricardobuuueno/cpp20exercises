@@ -32,5 +32,8 @@
     <ClInclude Include="long_sentence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="todomap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

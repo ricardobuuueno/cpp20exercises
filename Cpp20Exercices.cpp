@@ -3,6 +3,7 @@
 #include "RPN.h"
 #include "word_frequency_counter.h"
 #include "long_sentence.h"
+#include "todomap.h"
 
 #include <iostream>
 #include <vector>
@@ -15,37 +16,13 @@ using namespace cpp20;
 
 int main()
 {
-	vector<vector<string>> vv_senteces{ vector<string>{} };
-
-	for (string s{}; cin >> s;) {
-		vv_senteces.back().emplace_back(s);
-		if (is_eos(s)) {
-			vv_senteces.emplace_back(vector<string>{});
-		}
-	}
-
-	if (vv_senteces.back().empty()) {
-		vv_senteces.pop_back();
-	}
-
-	std::ranges::sort(vv_senteces, [](const auto& l, const auto& r) { return l.size() > r.size(); });
-
-	constexpr int WLIMIT{ 10 };
-	for (auto& v : vv_senteces) {
-		size_t size = v.size();
-		size_t limit{ WLIMIT };
-		cout << format("{}: ", size);
-		for (auto& s : v) {
-			cout << format("{} ", s);
-			if (--limit == 0) {
-				if (size > WLIMIT) {
-					cout << "...";
-				}
-				break;
-			}
-		}
-		cout << '\n';
-	}
+	todomap todo{
+		{1, "wash dishes"},
+		{0, "watch teevee"},
+		{2, "do homework"},
+		{0, "read comics"}
+	};
+	rprint(todo);
 }
 
 //git init
