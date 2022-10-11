@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="back_inserter.h" />
+    <ClInclude Include="long_sentence.h" />
     <ClInclude Include="RPN.h" />
     <ClInclude Include="word_frequency_counter.h" />
   </ItemGroup>

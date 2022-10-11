@@ -29,5 +29,8 @@
     <ClInclude Include="word_frequency_counter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="long_sentence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
