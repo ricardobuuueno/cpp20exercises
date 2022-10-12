@@ -35,5 +35,8 @@
     <ClInclude Include="todomap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="iterable_range.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

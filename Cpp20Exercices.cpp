@@ -4,6 +4,7 @@
 #include "word_frequency_counter.h"
 #include "long_sentence.h"
 #include "todomap.h"
+#include "iterable_range.h"
 
 #include <iostream>
 #include <vector>
@@ -16,13 +17,11 @@ using namespace cpp20;
 
 int main()
 {
-	todomap todo{
-		{1, "wash dishes"},
-		{0, "watch teevee"},
-		{2, "do homework"},
-		{0, "read comics"}
-	};
-	rprint(todo);
+	seq<int> r{ 100, 110 };
+	for (auto v : r) {
+		cout << format("{} ", v);
+	}
+	cout << '\n';
 }
 
 //git init
