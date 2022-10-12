@@ -22,6 +22,10 @@ int main()
 		cout << format("{} ", v);
 	}
 	cout << '\n';
+
+	auto [min_it, max_it] = minmax_element(r.begin(), r.end());
+	cout << format("{} - {}\n", *min_it, *max_it);
+
 }
 
 //git init
