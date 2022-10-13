@@ -5,6 +5,7 @@
 #include "long_sentence.h"
 #include "todomap.h"
 #include "iterable_range.h"
+#include "fibonacci.h"
 
 #include <iostream>
 #include <vector>
@@ -14,17 +15,24 @@
 using namespace std;
 using namespace cpp20;
 
+void printc(const auto& v, const string_view s = "") {
+	if (s.size()) {
+		cout << format("{}: \n", s);
+	}
+	for (auto e : v) {
+		cout << format("{} ", e);
+	}
+	cout << '\n';
+}
+
 
 int main()
 {
-	seq<int> r{ 100, 110 };
-	for (auto v : r) {
-		cout << format("{} ", v);
-	}
-	cout << '\n';
+	fib_generator fib(10);
+	printc(fib, "Fibonacci");
 
-	auto [min_it, max_it] = minmax_element(r.begin(), r.end());
-	cout << format("{} - {}\n", *min_it, *max_it);
+	auto x = ranges::views::transform(fib, [](unsigned long x) { return x * x; });
+	printc(x, "Squared");
 
 }
 
